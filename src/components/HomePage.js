@@ -20,7 +20,6 @@ const Intro = styled.div`
 `;
 
 const Name = styled.h1`
-    /* color: ${props => props.theme.fontColor}; */
     font-size: 40px;
 `;
 
@@ -92,7 +91,7 @@ const Home = (props) => {
             </Intro>
             <ProfileContainer>
                 <ProfileCircle>
-                    <ProfilePicture src="https://i.ibb.co/52sMn0Z/profile.png" />
+                    <ProfilePicture src="https://i.ibb.co/52sMn0Z/profile.png" alt="picture" />
                 </ProfileCircle>
                 <JobTitleDiv>
                     <Text><b>full stack developer</b></Text>
@@ -102,11 +101,11 @@ const Home = (props) => {
                 </JobDescription>
             </ProfileContainer>
             <IconsDiv>
-                <Anchor><Icon className="fab fa-gitlab" /></Anchor>
-                <Anchor><Icon className="fab fa-github" /></Anchor>
-                <Anchor><Icon className="fab fa-dev" /></Anchor>
-                <Anchor><Icon className="fab fa-linkedin" /></Anchor>
-                <Anchor><Icon className="fab fa-twitter" /></Anchor>
+                <Anchor href="https://gitlab.com/UddeshJain" target="_blank"><Icon className="fab fa-gitlab" /></Anchor>
+                <Anchor href="https://github.com/UddeshJain" target="_blank"><Icon className="fab fa-github" /></Anchor>
+                <Anchor href="https://dev.to/uddeshjain" target="_blank"><Icon className="fab fa-dev" /></Anchor>
+                <Anchor href="https://www.linkedin.com/in/uddeshjain/" target="_blank"><Icon className="fab fa-linkedin" /></Anchor>
+                <Anchor href="https://twitter.com/Uddesh_" target="_blank"><Icon className="fab fa-twitter" /></Anchor>
             </IconsDiv>
             <Anchor href="https://www.google.com/search?q=UddeshJain" target="blank"><Text>google <b>UddeshJain</b></Text></Anchor>
         </Container>

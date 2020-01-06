@@ -5,6 +5,8 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Home from "./components/HomePage";
 import Skills from './components/Skills';
+import Blogs from './components/Blogs';
+import Projects from './components/Projects';
 
 const LightTheme = {
     bg: "#ffffff",
@@ -33,7 +35,9 @@ const App = () => {
           <NavBar {...{open, NavBarClickHandler, isDark, ThemeHandler}} />
           <Router>
             <Home path="/" />
+            <Blogs path="/blogs" />
             <Skills path="/skills" />
+            <Projects path="projects" />
           </Router>
         </div>
       </ThemeProvider>
