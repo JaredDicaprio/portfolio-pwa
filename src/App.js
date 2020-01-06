@@ -1,45 +1,42 @@
-import React from 'react';
-import { Router, Link } from '@reach/router';
+import React, {useState} from 'react';
+import { Router } from '@reach/router';
+import {ThemeProvider} from 'emotion-theming';
 import './App.css';
+import NavBar from './components/NavBar';
+import Home from "./components/HomePage";
+import Skills from './components/Skills';
 
-const NavBar = () => (
-  <div className="navbar">
-    <h3>Task Manager</h3>
-    <Link to="/">Current Tasks</Link>
-    <Link to="/completed">Completed Tasks</Link>
-  </div>
-);
+const LightTheme = {
+    bg: "#ffffff",
+    fontColor: "black"
+}
 
-const Template = (props) => (
-  <div>
-    <NavBar />
-    <p className="page-info">
-      {props.title}:
-    </p>
-    <ul className={props.status}>
-        <li>Task 1</li>
-        <li>Task 2</li>
-        <li>Task 3</li>
-    </ul>
-  </div>
-);
-
-const CurrentTasks = () => (
-  <Template title="Current Tasks" status="Current"/>
-);
-
-const CompletedTasks = () => (
-  <Template title="Completed Tasks" status="Completed"/>
-);
+const DarkTheme = {
+    bg: "#000000",
+    fontColor: "#ffffff"
+}
 
 const App = () => {
+    const [open, setOpen] = useState(false);
+    const [isDark, setDark] = useState(false)
+    const NavBarClickHandler = (event) => {
+      event.preventDefault()
+      setOpen(!open)
+    }
+    const ThemeHandler = (event) => {
+      event.preventDefault()
+      setDark(!isDark)
+    }
     return (
-      <div>
-        <Router>
-          <CurrentTasks path="/" />
-          <CompletedTasks path="/completed" />
-        </Router>
-      </div>
+      <ThemeProvider theme={isDark ? DarkTheme : LightTheme}>
+        <div className="App">
+          <NavBar {...{open, NavBarClickHandler, isDark, ThemeHandler}} />
+          <Router>
+            <Home path="/" />
+            <Skills path="/skills" />
+          </Router>
+        </div>
+      </ThemeProvider>
     );
 }
 
