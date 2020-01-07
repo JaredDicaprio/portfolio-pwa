@@ -23,7 +23,6 @@ const SkillsDiv = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* padding: 20px; */
     @media (max-width: 768px) {
         display: initial;
         overflow-y: auto;

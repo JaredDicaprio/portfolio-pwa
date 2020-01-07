@@ -35,6 +35,9 @@ const PostAll = styled.div`
         width: 100vw;
         height: 80vh;
     }
+    @media (max-width: 400px) {
+        height: 65vh;
+    }
 `;
 
 const SubHeading = styled.h2`
@@ -66,6 +69,11 @@ const ListItem = styled.li`
     background: ${props => props.isActive ? "#a3a3a3" : null};
     font-weight: ${props => props.isActive ? "600" : "500"};
     line-height: 30px;
+    @media (max-width: 400px) {
+        font-size: 12px;
+        margin: 0px;
+        padding: 5px;
+    }
 `;
 
 const Blogs = (props) => {

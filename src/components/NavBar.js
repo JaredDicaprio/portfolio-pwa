@@ -33,6 +33,7 @@ const ListItem = styled.li`
     list-style: none;
     display: inline;
     font-size: 20px;
+    font-weight: 500;
     cursor: pointer;
     color: ${props => props.theme.fontColor};
     &:hover {
@@ -67,6 +68,7 @@ const MenuListContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     position: fixed;
     width: 0vw;
     height: 100vh;
@@ -82,7 +84,6 @@ const UnorderedItem = styled.ul`
     justify-content: space-between;
     margin: 0;
     padding: 0px;
-    list-style: none;
 `
 
 const MenuListItem = styled.li`
@@ -91,8 +92,12 @@ const MenuListItem = styled.li`
     height: 50px;
     cursor: pointer;
     color: white;
+    list-style: none;
     &:hover {
         color: #235bc1;
+    }
+    @media (max-width: 400px) {
+        padding: 20px;
     }
 `;
 
@@ -109,7 +114,7 @@ const NavBar = (props) => {
             <HeaderList>
                 <Link to="/" style={{textDecoration: "none"}}><ListItem>Home</ListItem></Link>
                 <Link to="/blogs" style={{textDecoration: "none"}}><ListItem>Blogs</ListItem></Link>
-                <Link to="/" style={{textDecoration: "none"}}><ListItem>Home</ListItem></Link>
+                <Link to="/projects" style={{textDecoration: "none"}}><ListItem>Projects</ListItem></Link>
             </HeaderList>
             <ThemeIcon onClick={props.ThemeHandler}>
                 <ThemeIconI className={props.isDark ? "fas fa-sun" : "fas fa-moon"} isDark={props.isDark} />
@@ -121,8 +126,13 @@ const NavBar = (props) => {
                         <Link to="/blogs" style={{textDecoration: "none"}}><MenuListItem>Blogs</MenuListItem></Link>
                         <Link to="/skills" style={{textDecoration: "none"}}><MenuListItem>Skills</MenuListItem></Link>
                         <Link to="/projects" style={{textDecoration: "none"}}><MenuListItem>Projects</MenuListItem></Link>
-                        <a href="https://uddesh.me" target="blank" style={{textDecoration: "none"}}><MenuListItem>Resume</MenuListItem></a>
                     </UnorderedItem>
+                        <a 
+                            href="https://drive.google.com/file/d/1YRckH5hyiHMNkMJu05Pk79RC7jVtvCHV/view?usp=sharing" 
+                            target="blank" 
+                            style={{textDecoration: "none"}} >
+                                <MenuListItem >Resume &#8595;</MenuListItem>
+                            </a>
                 </MenuListContainer>
             ) : null}
             

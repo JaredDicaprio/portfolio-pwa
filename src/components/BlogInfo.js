@@ -10,10 +10,8 @@ const PostInfo = styled.div`
     flex-direction: column;
     color: #ffffff;
     @media (max-width: 760px) {
-        /* padding: 20px 0 20px 0; */
         width: 100vw;
         height: 50vh;
-        /* padding: 10px; */
     }
 `;
 
@@ -38,7 +36,6 @@ const Icon = styled.i`
 
 const PostTitle = styled.h3`
     margin: 0;
-    /* padding: 0; */
     padding: 20px;
 `;
 

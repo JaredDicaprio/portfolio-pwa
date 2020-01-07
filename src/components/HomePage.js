@@ -44,6 +44,9 @@ const ProfilePicture = styled.img`
 const JobTitleDiv = styled.div`
     padding-top: 40px;
     font-weight: normal;
+    @media (max-width: 400px) {
+        padding-top: 10px;
+    }
 `;
 
 const Text = styled.p`
@@ -57,6 +60,10 @@ const Text = styled.p`
 const JobDescription = styled.div`
     padding: 5px 50px;
     line-height: 40px;
+    @media (max-width: 400px) {
+        padding: 0;
+        line-height: 30px;
+    }
 `;
 
 const IconsDiv = styled.div`

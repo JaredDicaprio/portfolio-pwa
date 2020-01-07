@@ -12,13 +12,30 @@ const Container = styled.div`
     color: ${props => props.theme.fontColor};
 `;
 
-const Heading = styled.h1``;
+const Heading = styled.h1`
+    font-size: 40px;
+    letter-spacing: 1px;
+`;
 
 const ProjectMain = styled.div`
+    position: relative;
     background: #235bc1;
-    width: 70%;
+    width: 65%;
+    margin: 0;
+    padding: 50px;
+    &::before {
+        content: "";
+        background-color: #ffffff;
+        position: absolute;
+        width: 2px;
+        height: 96%;
+        left: 5%;
+    }
     @media (max-width: 768px) {
-        width: 95%;
+        width: 70%;
+        &::before {
+            left: 2%;
+        }
     }
 `;
 
@@ -27,56 +44,56 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 60px 0px;
-    height: 2700px;
-    &::before {
-        content: "";
-        background-color: black;
-        position: absolute;
-        width: 2px;
-        height: 100%;
-        left: 4%;
-    }
 `;
 
 const ProjectContent = styled.div`
-    width: 60%;
-    height: 25vh;
+    width: 70%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background: ${props => props.theme.bg};
     margin: 20px;
-    padding: 20px 60px;
+    padding: 20px 40px;
     border-radius: 10px;
     box-shadow: 0 6px 6px #00318a;
     &::before {
-        position: absolute;
+        position: relative;
         content: "\\1F3C1";
-        left: -8%;
+        left: -70%;
         top: 90px;
         width: 35px;
-        height: 100%;
         font-size: 30px;
     }
-    @media (max-width: 768px) {
-        height: 22vh;
-        width: 50vw;
+    @media (max-width: 1000px) {
         &::before {
-            /* left: -10%; */
+            left: -72%;
+        }
+    }
+    @media (max-width: 768px) {
+        width: 55vw;
+        &::before {
+            left: -72%;
             font-size: 25px;
         }
     }
+    @media (max-width: 450px) {
+        &::before {
+            left: -78%;
+        }
+        height: 25vh;
+    }
 `;
 
-const RedirectDiv = styled.div``;
+const RedirectDiv = styled.div`
+    margin: 0;
+    padding: 0;
+`;
 
 const Span = styled.span`
     font-size: 18px;
-    font-weight: 500;
-    margin: 10px;
     font-weight: bold;
+    letter-spacing: 1px;
     @media (max-width: 768px) {
         font-size: 14px;
         font-weight: bold;
@@ -85,6 +102,7 @@ const Span = styled.span`
 
 const Anchor = styled.a`
     cursor: pointer;
+    margin-left: 10px;
 `;
 
 const Icon = styled.i`
@@ -100,7 +118,7 @@ const Icon = styled.i`
 const Description = styled.div`
     overflow-y: scroll;
     display: block;
-    margin: 10px;
+    margin: 0 0 10px 0;
     &::-webkit-scrollbar{
         display: none;
     }
@@ -108,6 +126,8 @@ const Description = styled.div`
 
 const Text = styled.p`
     font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
 `;
 
 const Projects = (props) => {
@@ -115,7 +135,7 @@ const Projects = (props) => {
     const data = [
         {
           name: "My Portfolio Version 2",
-          description: "This is the 2nd version of my portfolio website. It is built with React",
+          description: "This is the 2nd version of my portfolio website. It is built with React. It's a Progressive Web App (PWA) and could be installed as native app.",
           link: "",
           date: "Nov 2019"
         },

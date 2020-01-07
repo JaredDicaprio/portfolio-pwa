@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Router } from '@reach/router';
 import {ThemeProvider} from 'emotion-theming';
-import './App.css';
+import { Helmet } from 'react-helmet';
 import NavBar from './components/NavBar';
 import Home from "./components/HomePage";
 import Skills from './components/Skills';
@@ -32,6 +32,12 @@ const App = () => {
     return (
       <ThemeProvider theme={isDark ? DarkTheme : LightTheme}>
         <div className="App">
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>UddeshJain</title>
+            <meta name="description" content="Uddesh's portfolio website." />
+            <link rel="canonical" href="https://uddesh.me" />
+          </Helmet>
           <NavBar {...{open, NavBarClickHandler, isDark, ThemeHandler}} />
           <Router>
             <Home path="/" />
