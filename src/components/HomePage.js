@@ -21,6 +21,11 @@ const Intro = styled.div`
 
 const Name = styled.h1`
     font-size: 40px;
+    @media (max-width: 370px) {
+        font-size: 30px;
+        margin: 0;
+        padding: 0;
+    }
 `;
 
 const ProfileContainer = styled.div``;
@@ -44,7 +49,7 @@ const ProfilePicture = styled.img`
 const JobTitleDiv = styled.div`
     padding-top: 40px;
     font-weight: normal;
-    @media (max-width: 400px) {
+    @media (max-width: 370px) {
         padding-top: 10px;
     }
 `;
@@ -55,13 +60,16 @@ const Text = styled.p`
     @media (max-width: 768px) {
         font-size: 18px;
     }
+    @media (max-width: 370px) {
+        font-size: 14px;
+    }
 `;
 
 const JobDescription = styled.div`
     padding: 5px 50px;
     line-height: 40px;
-    @media (max-width: 400px) {
-        padding: 0;
+    @media (max-width: 370px) {
+        padding: 0 10px;
         line-height: 30px;
     }
 `;
