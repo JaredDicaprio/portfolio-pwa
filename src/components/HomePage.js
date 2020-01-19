@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Picture from "../assets/profile.png"
 
 const Container = styled.div`
     display: flex;
@@ -106,7 +107,7 @@ const Home = (props) => {
             </Intro>
             <ProfileContainer>
                 <ProfileCircle>
-                    <ProfilePicture src="https://i.ibb.co/52sMn0Z/profile.png" alt="picture" />
+                    <ProfilePicture src={Picture} alt="picture" />
                 </ProfileCircle>
                 <JobTitleDiv>
                     <Text><b>full stack developer</b></Text>
