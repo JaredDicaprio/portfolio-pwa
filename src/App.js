@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, lazy, Suspense} from 'react';
 import { Router } from '@reach/router';
 import {ThemeProvider} from 'emotion-theming';
 import { Helmet } from 'react-helmet';
+import Spinner from "./components/Spinner";
 import NavBar from './components/NavBar';
 import Home from "./components/HomePage";
 import Skills from './components/Skills';
@@ -38,12 +39,13 @@ const App = () => {
             <meta name="description" content="Uddesh's portfolio website." />
             <link rel="canonical" href="https://uddesh.me" />
           </Helmet>
-          <NavBar {...{open, NavBarClickHandler, isDark, ThemeHandler}} />
+          {/* <NavBar {...{open, NavBarClickHandler, isDark, ThemeHandler}} /> */}
           <Router>
-            <Home path="/" />
+            {/* <Home path="/" />
             <Blogs path="/blogs" />
             <Skills path="/skills" />
-            <Projects path="projects" />
+            <Projects path="projects" /> */}
+            <Spinner path="/" />
           </Router>
         </div>
       </ThemeProvider>
