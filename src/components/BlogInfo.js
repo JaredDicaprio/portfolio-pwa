@@ -11,7 +11,7 @@ const PostInfo = styled.div`
     color: #ffffff;
     @media (max-width: 760px) {
         width: 100vw;
-        height: 50vh;
+        height: 40vh;
     }
 `;
 
@@ -75,6 +75,7 @@ const Anchor = styled.a`
     }
     @media (max-width: 760px) {
         width: 50%;
+        margin: 0;
     }
 `;
 

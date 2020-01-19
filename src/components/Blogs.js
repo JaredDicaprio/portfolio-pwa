@@ -33,7 +33,7 @@ const PostAll = styled.div`
     flex-direction: column;
     @media (max-width: 760px) {
         width: 100vw;
-        height: 80vh;
+        height: 50vh;
     }
     @media (max-width: 370px) {
         height: 65vh;
@@ -56,7 +56,7 @@ const PostList = styled.div`
         display: none;
     }
     @media (max-width: 760px) {
-        height: 70%;
+        height: 90%;
     }
 `;
 
@@ -67,12 +67,19 @@ const ListItem = styled.li`
     border-radius: 25px;
     cursor: pointer;
     background: ${props => props.isActive ? "#a3a3a3" : null};
-    font-weight: ${props => props.isActive ? "600" : "500"};
+    font-weight: 500;
     line-height: 30px;
+    @media (max-width: 760px) {
+        font-size: 14px;
+        margin: 0px;
+        padding: 10px;
+        line-height: 30px;
+    }
     @media (max-width: 370px) {
         font-size: 12px;
         margin: 0px;
-        padding: 5px;
+        padding: 10px;
+        line-height: 30px;
     }
 `;
 
@@ -82,13 +89,13 @@ const Blogs = (props) => {
     const [activePost, setActivePost] = useState(0)
     useEffect(() => {
         function fetchPost() {
-        const url = 'https://dev.to/api/articles?username=uddeshjain'
-        axios.get(url).then(result =>
-            setPostData(result.data)
-        ).catch(e => console.log(e))
+            const url = 'https://dev.to/api/articles?username=uddeshjain'
+            axios.get(url).then(result =>
+                setPostData(result.data)
+            ).catch(e => console.log(e))
         }
         fetchPost()
-    }, []);
+    }, [postData]);
 
     const postClickHandler = (event) => {
         setActivePost(parseInt(event.currentTarget.id))

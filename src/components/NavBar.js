@@ -106,7 +106,7 @@ const NavBar = (props) => {
         <Container>
             <MenuButtonDiv onClick={props.NavBarClickHandler}>
                 {props.open ? (
-                    <MenuButton className="fas fa-times" style={{color: "#ffffff"}} />
+                    <MenuButton className="fas fa-times" style={{color: "#ffffff", position: "fixed"}} />
                 ) : (
                     <MenuButton className="fas fa-bars" isDark={props.isDark} />
                 )}
