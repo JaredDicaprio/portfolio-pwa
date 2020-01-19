@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import axios from 'axios';
 import Bloginfo from './BlogInfo';
+import Spinner from "./Spinner";
 
 const Container = styled.div`
     display: flex;
@@ -84,22 +85,24 @@ const ListItem = styled.li`
 `;
 
 const Blogs = (props) => {
-
     const [postData, setPostData] = useState([])
     const [activePost, setActivePost] = useState(0)
+    async function fetchPost() {
+        const url = 'https://dev.to/api/articles?username=uddeshjain'
+        const result = await axios.get(url);
+        setPostData(result.data);
+    }
     useEffect(() => {
-        function fetchPost() {
-            const url = 'https://dev.to/api/articles?username=uddeshjain'
-            axios.get(url).then(result =>
-                setPostData(result.data)
-            ).catch(e => console.log(e))
-        }
         fetchPost()
     }, [postData]);
 
     const postClickHandler = (event) => {
         setActivePost(parseInt(event.currentTarget.id))
       }
+
+    if (!postData) {
+        return <Spinner />
+    }
 
     return (
         <Container>
