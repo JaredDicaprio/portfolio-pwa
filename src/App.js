@@ -4,18 +4,45 @@ import {ThemeProvider} from 'emotion-theming';
 import { Helmet } from 'react-helmet';
 import Spinner from "./components/Spinner";
 import NavBar from './components/NavBar';
-// import Home from "./components/HomePage";
-import Skills from './components/Skills';
-import Blogs from './components/Blogs';
-import Projects from './components/Projects';
 
 const Home = lazy(() =>
   import("./components/HomePage")
 );
 
+const Blogs = lazy(() =>
+  import("./components/Blogs")
+);
+
+const Skills = lazy(() =>
+  import("./components/Skills")
+);
+
+const Projects = lazy(() =>
+  import("./components/Projects")
+);
+
+
 const HomePage = () => (
   <Suspense fallback={<Spinner />}>
     <Home />
+  </Suspense>
+)
+
+const BlogsPage = () => (
+  <Suspense fallback={<Spinner />}>
+    <Blogs />
+  </Suspense>
+)
+
+const SkillsPage = () => (
+  <Suspense fallback={<Spinner />}>
+    <Skills />
+  </Suspense>
+)
+
+const ProjectsPage = () => (
+  <Suspense fallback={<Spinner />}>
+    <Projects />
   </Suspense>
 )
 
@@ -52,10 +79,9 @@ const App = () => {
           <NavBar {...{open, NavBarClickHandler, isDark, ThemeHandler}} />
           <Router>
             <HomePage path="/" />
-            <Blogs path="/blogs" />
-            <Skills path="/skills" />
-            <Projects path="projects" />
-            {/* <Spinner path="/" /> */}
+            <BlogsPage path="/blogs" />
+            <SkillsPage path="/skills" />
+            <ProjectsPage path="projects" />
           </Router>
         </div>
       </ThemeProvider>
