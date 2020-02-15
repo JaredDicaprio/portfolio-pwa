@@ -1,4 +1,4 @@
-# My Portfolio website version 2
+# My Portfolio PWA (Progressive Web App)
 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/60bad734-a55a-4ca0-b1cb-6cf2cb41de99/deploy-status)](https://app.netlify.com/sites/uddeshjain/deploys)
@@ -28,5 +28,5 @@ $ npm install
 3. To run
 
 ```
-$ npm run dev
+$ npm start
 ```
