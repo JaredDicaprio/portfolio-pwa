@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import styled from '@emotion/styled';
-import axios from 'axios';
-import Bloginfo from './BlogInfo';
+import React, { useEffect, useState } from "react";
+import styled from "@emotion/styled";
+import axios from "axios";
+import Bloginfo from "./BlogInfo";
 import Spinner from "./Spinner";
 
 const Container = styled.div`
@@ -53,7 +53,7 @@ const PostList = styled.div`
     margin: 0;
     padding: 0;
     overflow-y: scroll;
-    &::-webkit-scrollbar{
+    &::-webkit-scrollbar {
         display: none;
     }
     @media (max-width: 760px) {
@@ -67,7 +67,7 @@ const ListItem = styled.li`
     margin: 5px;
     border-radius: 25px;
     cursor: pointer;
-    background: ${props => props.isActive ? "#a3a3a3" : null};
+    background: ${props => (props.isActive ? "#a3a3a3" : null)};
     font-weight: 500;
     line-height: 30px;
     @media (max-width: 760px) {
@@ -84,27 +84,29 @@ const ListItem = styled.li`
     }
 `;
 
-const Blogs = (props) => {
-    const [postData, setPostData] = useState([])
-    const [activePost, setActivePost] = useState(0)
-    async function fetchPost() {
-        const url = 'https://dev.to/api/articles?username=uddeshjain'
-        const result = await axios.get(url);
-        setPostData(result.data);
-    }
+const Blogs = props => {
+    const [postData, setPostData] = useState([]);
+    const [activePost, setActivePost] = useState(0);
+    const [loading, setLoading] = useState(false);
+
     useEffect(() => {
-        fetchPost()
-    }, [postData]);
+        setLoading(true);
+        axios
+            .get("https://dev.to/api/articles?username=uddeshjain")
+            .then(data => {
+                setPostData(data.data);
+                setLoading(false);
+            })
+            .catch(err => console.error(err));
+    }, []);
 
-    const postClickHandler = (event) => {
-        setActivePost(parseInt(event.currentTarget.id))
-      }
+    const postClickHandler = event => {
+        setActivePost(parseInt(event.currentTarget.id));
+    };
 
-    if (!postData) {
-        return <Spinner />
-    }
-
-    return (
+    return loading ? (
+        <Spinner />
+    ) : (
         <Container>
             <Heading>Here are few posts</Heading>
             <PostAll>
@@ -116,25 +118,25 @@ const Blogs = (props) => {
                                 isActive={index === activePost}
                                 id={index}
                                 onClick={postClickHandler}
-                                key={index}>
+                                key={index}
+                            >
                                 {data.title}
                             </ListItem>
                         ))}
                     </ul>
                 </PostList>
             </PostAll>
-            {postData[activePost] ? 
+            {postData[activePost] ? (
                 <Bloginfo
-                title={postData[activePost].title}
-                date={postData[activePost].published_at}
-                tags={postData[activePost].tag_list}
-                url={postData[activePost].url}
-                reactions={postData[activePost].positive_reactions_count}
+                    title={postData[activePost].title}
+                    date={postData[activePost].published_at}
+                    tags={postData[activePost].tag_list}
+                    url={postData[activePost].url}
+                    reactions={postData[activePost].positive_reactions_count}
                 />
-                : null
-            }
+            ) : null}
         </Container>
-    )
-}
+    );
+};
 
 export default Blogs;
