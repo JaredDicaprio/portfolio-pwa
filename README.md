@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/UddeshJain/portfolioV2.svg?branch=master)](https://travis-ci.org/UddeshJain/portfolioV2)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## [live Demo](https://uddesh.tech)
+## [live Demo](https://uddesh.me)
 
 ![Alt Text](https://thepracticaldev.s3.amazonaws.com/i/rm7mn8h4lqqdc27ooas9.png)
 
