@@ -1,9 +1,6 @@
 var CACHE_NAME = 'uddesh-portfolio-pwa';
 var urlsToCache = [
-  '/',
-  '/blogs',
-  '/skills',
-  '/projects'
+  '/'
 ];
 
 // Install a service worker
