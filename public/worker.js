@@ -1,7 +1,9 @@
-var CACHE_NAME = 'pwa-task-manager';
+var CACHE_NAME = 'uddesh-portfolio-pwa';
 var urlsToCache = [
   '/',
-  '/completed'
+  '/blogs',
+  '/skills',
+  '/projects'
 ];
 
 // Install a service worker
@@ -35,7 +37,7 @@ self.addEventListener('fetch', event => {
 
 // Update a service worker
 self.addEventListener('activate', event => {
-  var cacheWhitelist = ['pwa-task-manager'];
+  var cacheWhitelist = ['uddesh-portfolio-pwa'];
   event.waitUntil(
     caches.keys()
     .then(cacheNames => {
