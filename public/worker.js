@@ -35,7 +35,8 @@ self.addEventListener('fetch', event => {
 self.addEventListener('activate', event => {
   var cacheWhitelist = ['pwa-task-manager'];
   event.waitUntil(
-    caches.keys().then(cacheNames => {
+    caches.keys()
+    .then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
@@ -44,5 +45,6 @@ self.addEventListener('activate', event => {
         })
       );
     })
+    .catch(err => console.error(err))
   );
 });
