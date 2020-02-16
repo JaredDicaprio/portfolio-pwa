@@ -117,11 +117,11 @@ const Home = (props) => {
                 </JobDescription>
             </ProfileContainer>
             <IconsDiv>
-                <Anchor href="https://gitlab.com/UddeshJain" target="_blank"><Icon className="fab fa-gitlab" /></Anchor>
-                <Anchor href="https://github.com/UddeshJain" target="_blank"><Icon className="fab fa-github" /></Anchor>
-                <Anchor href="https://dev.to/uddeshjain" target="_blank"><Icon className="fab fa-dev" /></Anchor>
-                <Anchor href="https://www.linkedin.com/in/uddeshjain/" target="_blank"><Icon className="fab fa-linkedin" /></Anchor>
-                <Anchor href="https://twitter.com/Uddesh_" target="_blank"><Icon className="fab fa-twitter" /></Anchor>
+                <Anchor href="https://gitlab.com/UddeshJain" rel="noopener" target="_blank"><Icon className="fab fa-gitlab" alt="Gitlab" /></Anchor>
+                <Anchor href="https://github.com/UddeshJain" rel="noopener" target="_blank"><Icon className="fab fa-github" alt="Github" /></Anchor>
+                <Anchor href="https://dev.to/uddeshjain" rel="noopener" target="_blank"><Icon className="fab fa-dev" alt="Dev Community" /></Anchor>
+                <Anchor href="https://www.linkedin.com/in/uddeshjain/" rel="noopener" target="_blank"><Icon className="fab fa-linkedin" alt="Linkedin" /></Anchor>
+                <Anchor href="https://twitter.com/Uddesh_" rel="noopener" target="_blank"><Icon className="fab fa-twitter" alt="twitter" /></Anchor>
             </IconsDiv>
             <Anchor href="https://www.google.com/search?q=UddeshJain" target="blank"><Text>google <b>UddeshJain</b></Text></Anchor>
         </Container>

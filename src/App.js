@@ -1,4 +1,4 @@
-import React, {useState, lazy, Suspense} from 'react';
+import React, {useState, lazy, Suspense, useCallback} from 'react';
 import { Router } from '@reach/router';
 import {ThemeProvider} from 'emotion-theming';
 import { Helmet } from 'react-helmet';
@@ -59,14 +59,17 @@ const DarkTheme = {
 const App = () => {
     const [open, setOpen] = useState(false);
     const [isDark, setDark] = useState(false)
-    const NavBarClickHandler = (event) => {
+
+    const NavBarClickHandler = useCallback((event) => {
       event.preventDefault()
       setOpen(!open)
-    }
-    const ThemeHandler = (event) => {
+    }, [open])
+
+    const ThemeHandler = useCallback((event) => {
       event.preventDefault()
       setDark(!isDark)
-    }
+    }, [isDark])
+    
     return (
       <ThemeProvider theme={isDark ? DarkTheme : LightTheme}>
         <div className="App">
