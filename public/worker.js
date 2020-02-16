@@ -13,6 +13,7 @@ self.addEventListener('install', event => {
         console.log('Opened cache');
         return cache.addAll(urlsToCache);
       })
+      .catch(err => console.error(err))
   );
 });
 
@@ -28,6 +29,7 @@ self.addEventListener('fetch', event => {
         return fetch(event.request);
       }
     )
+    .catch(err => console.error(err))
   );
 });
 
