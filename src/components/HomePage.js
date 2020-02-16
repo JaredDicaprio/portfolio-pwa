@@ -123,7 +123,7 @@ const Home = (props) => {
                 <Anchor href="https://www.linkedin.com/in/uddeshjain/" rel="noopener" target="_blank"><Icon className="fab fa-linkedin" alt="Linkedin" /></Anchor>
                 <Anchor href="https://twitter.com/Uddesh_" rel="noopener" target="_blank"><Icon className="fab fa-twitter" alt="twitter" /></Anchor>
             </IconsDiv>
-            <Anchor href="https://www.google.com/search?q=UddeshJain" target="blank"><Text>google <b>UddeshJain</b></Text></Anchor>
+            <Anchor href="https://www.google.com/search?q=UddeshJain" rel="noopener" target="blank"><Text>google <b>UddeshJain</b></Text></Anchor>
         </Container>
     )
 }
