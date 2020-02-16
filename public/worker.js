@@ -1,7 +1,6 @@
-var CACHE_NAME = 'pwa-task-manager';
+var CACHE_NAME = 'uddesh-portfolio-pwa';
 var urlsToCache = [
-  '/',
-  '/completed'
+  '/'
 ];
 
 // Install a service worker
@@ -13,6 +12,7 @@ self.addEventListener('install', event => {
         console.log('Opened cache');
         return cache.addAll(urlsToCache);
       })
+      .catch(err => console.error(err))
   );
 });
 
@@ -28,14 +28,16 @@ self.addEventListener('fetch', event => {
         return fetch(event.request);
       }
     )
+    .catch(err => console.error(err))
   );
 });
 
 // Update a service worker
 self.addEventListener('activate', event => {
-  var cacheWhitelist = ['pwa-task-manager'];
+  var cacheWhitelist = ['uddesh-portfolio-pwa'];
   event.waitUntil(
-    caches.keys().then(cacheNames => {
+    caches.keys()
+    .then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
@@ -44,5 +46,6 @@ self.addEventListener('activate', event => {
         })
       );
     })
+    .catch(err => console.error(err))
   );
 });
