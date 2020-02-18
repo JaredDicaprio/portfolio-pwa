@@ -57,7 +57,7 @@ const App = () => {
         bg: "#000000",
         fontColor: "#ffffff"
     }
-    const [isDarkTheme, setDarkTheme] = useState(localStorage.getItem("isDarkTheme") === "true" ? true : false);
+    const [isDarkTheme, setDarkTheme] = useState(localStorage.getItem("isDarkTheme") === "true");
     const ThemeHandler = useCallback((event) => {
       event.preventDefault()
       setDarkTheme(!isDarkTheme)
