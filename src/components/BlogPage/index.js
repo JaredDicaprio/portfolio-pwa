@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
-import axios from "axios";
 import Bloginfo from "./BlogInfo";
-import Spinner from "./Spinner";
+import Spinner from "../Spinner";
 
 const Container = styled.div`
     display: flex;
@@ -85,26 +84,8 @@ const ListItem = styled.li`
 `;
 
 const Blogs = props => {
-    const [postData, setPostData] = useState([]);
-    const [activePost, setActivePost] = useState(0);
-    const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        setLoading(true);
-        axios
-            .get("https://dev.to/api/articles?username=uddeshjain")
-            .then(data => {
-                setPostData(data.data);
-                setLoading(false);
-            })
-            .catch(err => console.error(err));
-    }, []);
-
-    const postClickHandler = event => {
-        setActivePost(parseInt(event.currentTarget.id));
-    };
-
-    return loading ? (
+    return props.loading ? (
         <Spinner />
     ) : (
         <Container>
@@ -113,11 +94,11 @@ const Blogs = props => {
                 <SubHeading>Here are few posts</SubHeading>
                 <PostList>
                     <ul>
-                        {postData.map((data, index) => (
+                        {props.postData.map((data, index) => (
                             <ListItem
-                                isActive={index === activePost}
+                                isActive={index === props.activePost}
                                 id={index}
-                                onClick={postClickHandler}
+                                onClick={e => props.postClickHandler(e)}
                                 key={index}
                             >
                                 {data.title}
@@ -126,13 +107,13 @@ const Blogs = props => {
                     </ul>
                 </PostList>
             </PostAll>
-            {postData[activePost] ? (
+            {props.postData[props.activePost] ? (
                 <Bloginfo
-                    title={postData[activePost].title}
-                    date={postData[activePost].published_at}
-                    tags={postData[activePost].tag_list}
-                    url={postData[activePost].url}
-                    reactions={postData[activePost].positive_reactions_count}
+                    title={props.postData[props.activePost].title}
+                    date={props.postData[props.activePost].published_at}
+                    tags={props.postData[props.activePost].tag_list}
+                    url={props.postData[props.activePost].url}
+                    reactions={props.postData[props.activePost].positive_reactions_count}
                 />
             ) : null}
         </Container>

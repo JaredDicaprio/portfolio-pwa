@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Picture from "../assets/profile.png"
+import Picture from "../../assets/profile.png"
 
 const Container = styled.div`
     display: flex;

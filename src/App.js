@@ -2,23 +2,23 @@ import React, {useState, lazy, Suspense, useCallback} from 'react';
 import { Router } from '@reach/router';
 import {ThemeProvider} from 'emotion-theming';
 import { Helmet } from 'react-helmet';
-import Spinner from "./components/Spinner";
-import NavBar from './components/NavBar';
+import Spinner from "./Containers/Spinner/index";
+import NavBar from './Containers/NavBar/index';
 
 const Home = lazy(() =>
-  import("./components/HomePage")
+  import("./Containers/LandingPage/index")
 );
 
 const Blogs = lazy(() =>
-  import("./components/Blogs")
+  import("./Containers/BlogPage/index")
 );
 
 const Skills = lazy(() =>
-  import("./components/Skills")
+  import("./Containers/SkillsPage/index")
 );
 
 const Projects = lazy(() =>
-  import("./components/Projects")
+  import("./Containers/ProjectsPage/index")
 );
 
 
@@ -46,32 +46,26 @@ const ProjectsPage = () => (
   </Suspense>
 )
 
-const LightTheme = {
-    bg: "#ffffff",
-    fontColor: "black"
-}
-
-const DarkTheme = {
-    bg: "#000000",
-    fontColor: "#ffffff"
-}
 
 const App = () => {
-    const [open, setOpen] = useState(false);
-    const [isDark, setDark] = useState(false)
-
-    const NavBarClickHandler = useCallback((event) => {
-      event.preventDefault()
-      setOpen(!open)
-    }, [open])
-
+    const LightTheme = {
+        bg: "#ffffff",
+        fontColor: "black"
+    }
+    
+    const DarkTheme = {
+        bg: "#000000",
+        fontColor: "#ffffff"
+    }
+    const [isDarkTheme, setDarkTheme] = useState(localStorage.getItem("isDarkTheme") === "true");
     const ThemeHandler = useCallback((event) => {
       event.preventDefault()
-      setDark(!isDark)
-    }, [isDark])
+      setDarkTheme(!isDarkTheme)
+      localStorage.setItem("isDarkTheme", !isDarkTheme)
+    }, [isDarkTheme])
     
     return (
-      <ThemeProvider theme={isDark ? DarkTheme : LightTheme}>
+      <ThemeProvider theme={isDarkTheme ? DarkTheme : LightTheme}>
         <div className="App">
           <Helmet>
             <meta charSet="utf-8" />
@@ -79,7 +73,7 @@ const App = () => {
             <meta name="description" content="Uddesh's portfolio website." />
             <link rel="canonical" href="https://uddesh.me" />
           </Helmet>
-          <NavBar {...{open, NavBarClickHandler, isDark, ThemeHandler}} />
+          <NavBar {...{ isDarkTheme, ThemeHandler}} />
           <Router>
             <HomePage path="/" />
             <BlogsPage path="/blogs" />
