@@ -74,93 +74,27 @@ const Skills = (props) => {
             <Heading>Technical Skills</Heading>
             <SkillsDiv>
                 <SkillsLeft>
-                    <Skill>
-                        <SkillTextDiv>
-                            <Text>JavaScript</Text>
-                            <Text>80%</Text>
-                        </SkillTextDiv>
-                        <Progress max="100" value="80" />
-                    </Skill>
-                    <Skill>
-                        <SkillTextDiv>
-                            <Text>NodeJS</Text>
-                            <Text>70%</Text>
-                        </SkillTextDiv>
-                        <Progress max="100" value="70" />
-                    </Skill>
-                    <Skill>
-                        <SkillTextDiv>
-                            <Text>React</Text>
-                            <Text>80%</Text>
-                        </SkillTextDiv>
-                        <Progress max="100" value="80" />
-                    </Skill>
-                    <Skill>
-                        <SkillTextDiv>
-                            <Text>Redux</Text>
-                            <Text>60%</Text>
-                        </SkillTextDiv>
-                        <Progress max="100" value="60" />
-                    </Skill>
-                    <Skill>
-                        <SkillTextDiv>
-                            <Text>MongoDB</Text>
-                            <Text>65%</Text>
-                        </SkillTextDiv>
-                        <Progress max="100" value="65" />
-                    </Skill>
-                    <Skill>
-                        <SkillTextDiv>
-                            <Text>ExpressJS</Text>
-                            <Text>70%</Text>
-                        </SkillTextDiv>
-                        <Progress max="100" value="70" />
-                    </Skill>
+                    {props.data.leftSkills.map((data, index) => (
+                        <Skill key={index}>
+                            <SkillTextDiv>
+                                <Text>{data.technology}</Text>
+                                <Text>{data.level}%</Text>
+                            </SkillTextDiv>
+                            <Progress max="100" value={data.level} />
+                        </Skill>
+                    ))}
                 </SkillsLeft>
 
                 <SkillsLeft>
-                    <Skill>
-                        <SkillTextDiv>
-                            <Text>Python</Text>
-                            <Text>70%</Text>
-                        </SkillTextDiv>
-                        <Progress max="100" value="70" />
-                    </Skill>
-                    <Skill>
-                        <SkillTextDiv>
-                            <Text>HTML</Text>
-                            <Text>85%</Text>
-                        </SkillTextDiv>
-                        <Progress max="100" value="85" />
-                    </Skill>
-                    <Skill>
-                        <SkillTextDiv>
-                            <Text>CSS</Text>
-                            <Text>80%</Text>
-                        </SkillTextDiv>
-                        <Progress max="100" value="80" />
-                    </Skill>
-                    <Skill>
-                        <SkillTextDiv>
-                            <Text>Docker</Text>
-                            <Text>60%</Text>
-                        </SkillTextDiv>
-                        <Progress max="100" value="60" />
-                    </Skill>
-                    <Skill>
-                        <SkillTextDiv>
-                            <Text>Git</Text>
-                            <Text>70%</Text>
-                        </SkillTextDiv>
-                        <Progress max="100" value="70" />
-                    </Skill>
-                    <Skill>
-                        <SkillTextDiv>
-                            <Text>REST API</Text>
-                            <Text>70%</Text>
-                        </SkillTextDiv>
-                        <Progress max="100" value="70" />
-                    </Skill>
+                {props.data.rightSkills.map((data, index) => (
+                        <Skill key={index}>
+                            <SkillTextDiv>
+                                <Text>{data.technology}</Text>
+                                <Text>{data.level}%</Text>
+                            </SkillTextDiv>
+                            <Progress max="100" value={data.level} />
+                        </Skill>
+                    ))}
                 </SkillsLeft>
             </SkillsDiv>
         </Container>
