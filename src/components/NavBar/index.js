@@ -16,7 +16,7 @@ const MenuButton = styled.i`
     font-size: 25px;
     margin: 30px;
     cursor: pointer;
-    color: ${props => props.isDark ? "#ffffff" : "#000000"};
+    color: ${props => props.isDarkTheme ? "#ffffff" : "#000000"};
 `;
 
 const HeaderList = styled.div`
@@ -57,7 +57,7 @@ const ThemeIconI = styled.i`
     font-size: 25px;
     margin: 30px;
     cursor: pointer;
-    color: ${props => props.isDark ? "#ffffff" : "#000000"};
+    color: ${props => props.isDarkTheme ? "#ffffff" : "#000000"};
 `;
 
 const WidthAnimation = keyframes`
@@ -108,7 +108,7 @@ const NavBar = (props) => {
                 {props.open ? (
                     <MenuButton className="fas fa-times" style={{color: "#ffffff", position: "fixed"}} />
                 ) : (
-                    <MenuButton className="fas fa-bars" isDark={props.isDark} />
+                    <MenuButton className="fas fa-bars" isDarkTheme={props.isDarkTheme} />
                 )}
             </MenuButtonDiv>
             <HeaderList>
@@ -117,7 +117,7 @@ const NavBar = (props) => {
                 <Link to="/projects" style={{textDecoration: "none"}}><ListItem>Projects</ListItem></Link>
             </HeaderList>
             <ThemeIcon onClick={props.ThemeHandler}>
-                <ThemeIconI className={props.isDark ? "fas fa-sun" : "fas fa-moon"} isDark={props.isDark} />
+                <ThemeIconI className={props.isDarkTheme ? "fas fa-sun" : "fas fa-moon"} isDarkTheme={props.isDarkTheme} />
             </ThemeIcon>
             {props.open ? (
                 <MenuListContainer>

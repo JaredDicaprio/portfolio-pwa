@@ -46,32 +46,26 @@ const ProjectsPage = () => (
   </Suspense>
 )
 
-const LightTheme = {
-    bg: "#ffffff",
-    fontColor: "black"
-}
 
-const DarkTheme = {
-    bg: "#000000",
-    fontColor: "#ffffff"
-}
-
-const AppRoutes = () => {
-    const [open, setOpen] = useState(false);
-    const [isDark, setDark] = useState(false)
-
-    const NavBarClickHandler = useCallback((event) => {
-      event.preventDefault()
-      setOpen(!open)
-    }, [open])
+const App = () => {
+    const LightTheme = {
+        bg: "#ffffff",
+        fontColor: "black"
+    }
+    
+    const DarkTheme = {
+        bg: "#000000",
+        fontColor: "#ffffff"
+    }
+    const [isDarkTheme, setDarkTheme] = useState();
 
     const ThemeHandler = useCallback((event) => {
       event.preventDefault()
-      setDark(!isDark)
-    }, [isDark])
+      setDarkTheme(!isDarkTheme)
+    }, [isDarkTheme])
     
     return (
-      <ThemeProvider theme={isDark ? DarkTheme : LightTheme}>
+      <ThemeProvider theme={isDarkTheme ? DarkTheme : LightTheme}>
         <div className="App">
           <Helmet>
             <meta charSet="utf-8" />
@@ -79,7 +73,7 @@ const AppRoutes = () => {
             <meta name="description" content="Uddesh's portfolio website." />
             <link rel="canonical" href="https://uddesh.me" />
           </Helmet>
-          <NavBar {...{open, NavBarClickHandler, isDark, ThemeHandler}} />
+          <NavBar {...{ isDarkTheme, ThemeHandler}} />
           <Router>
             <HomePage path="/" />
             <BlogsPage path="/blogs" />
@@ -91,4 +85,4 @@ const AppRoutes = () => {
     );
 }
 
-export default AppRoutes;
+export default App;
