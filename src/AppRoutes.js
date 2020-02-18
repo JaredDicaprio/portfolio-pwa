@@ -2,23 +2,23 @@ import React, {useState, lazy, Suspense, useCallback} from 'react';
 import { Router } from '@reach/router';
 import {ThemeProvider} from 'emotion-theming';
 import { Helmet } from 'react-helmet';
-import Spinner from "./components/Spinner";
-import NavBar from './components/NavBar';
+import Spinner from "./Containers/Spinner/index";
+import NavBar from './Containers/NavBar/index';
 
 const Home = lazy(() =>
-  import("./components/HomePage")
+  import("./Containers/LandingPage/index")
 );
 
 const Blogs = lazy(() =>
-  import("./components/Blogs")
+  import("./Containers/BlogPage/index")
 );
 
 const Skills = lazy(() =>
-  import("./components/Skills")
+  import("./Containers/SkillsPage/index")
 );
 
 const Projects = lazy(() =>
-  import("./components/Projects")
+  import("./Containers/ProjectsPage/index")
 );
 
 
@@ -56,7 +56,7 @@ const DarkTheme = {
     fontColor: "#ffffff"
 }
 
-const App = () => {
+const AppRoutes = () => {
     const [open, setOpen] = useState(false);
     const [isDark, setDark] = useState(false)
 
@@ -91,4 +91,4 @@ const App = () => {
     );
 }
 
-export default App;
+export default AppRoutes;

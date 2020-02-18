@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import axios from "axios";
 import Bloginfo from "./BlogInfo";
-import Spinner from "./Spinner";
+import Spinner from "../Spinner";
 
 const Container = styled.div`
     display: flex;
