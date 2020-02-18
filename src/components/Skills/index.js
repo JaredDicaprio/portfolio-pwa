@@ -86,7 +86,7 @@ const Skills = (props) => {
                 </SkillsLeft>
 
                 <SkillsLeft>
-                {props.data.rightSkills.map((data, index) => (
+                    {props.data.rightSkills.map((data, index) => (
                         <Skill key={index}>
                             <SkillTextDiv>
                                 <Text>{data.technology}</Text>
