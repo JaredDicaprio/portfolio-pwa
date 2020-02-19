@@ -69,7 +69,7 @@ const App = () => {
         <div className="App">
           <Helmet>
             <meta charSet="utf-8" />
-            <title>UddeshJain</title>
+            <title>uddesh jain</title>
             <meta name="description" content="Uddesh's portfolio website." />
             <link rel="canonical" href="https://uddesh.me" />
           </Helmet>
