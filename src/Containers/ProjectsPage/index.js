@@ -5,8 +5,8 @@ const ProjectsContainer = () => {
     const data = [
         {
           name: "My Portfolio Version 2",
-          description: "This is the 2nd version of my portfolio website. It is built with React. It's a Progressive Web App (PWA) and could be installed as native app.",
-          link: "",
+          description: "This is the 2nd version of my portfolio website. It is built with React. It's a Progressive Web App (PWA) and could be installed as native app and works offline as well.",
+          link: "https://gitlab.com/UddeshJain/portfolio-pwa",
           date: "Nov 2019"
         },
         {

@@ -141,7 +141,7 @@ const Projects = (props) => {
                         <ProjectContent key={index}>
                             <RedirectDiv>
                                 <Span>{data.name}</Span>
-                                <Anchor>
+                                <Anchor href={data.link} target="_blank">
                                     <Icon className="fas fa-external-link-alt"></Icon>
                                 </Anchor>
                             </RedirectDiv>

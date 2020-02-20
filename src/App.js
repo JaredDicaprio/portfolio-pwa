@@ -49,7 +49,7 @@ const ProjectsPage = () => (
 
 const App = () => {
     const LightTheme = {
-        bg: "#ffffff",
+        bg: "#eeeeee",
         fontColor: "black"
     }
     
