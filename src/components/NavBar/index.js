@@ -37,7 +37,7 @@ const ListItem = styled.li`
     cursor: pointer;
     color: ${props => props.theme.fontColor};
     &:hover {
-        color: #235bc1;
+        color: #4edac4;
     };
     @media (max-width: 768px) {
         display: none;
@@ -94,7 +94,7 @@ const MenuListItem = styled.li`
     color: white;
     list-style: none;
     &:hover {
-        color: #235bc1;
+        color: #4edac4;
     }
     @media (max-width: 400px) {
         padding: 20px;

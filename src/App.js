@@ -49,12 +49,12 @@ const ProjectsPage = () => (
 
 const App = () => {
     const LightTheme = {
-        bg: "#eeeeee",
-        fontColor: "black"
+        bg: "#ffffff",
+        fontColor: "#464646"
     }
     
     const DarkTheme = {
-        bg: "#000000",
+        bg: "#100e17",
         fontColor: "#ffffff"
     }
     const [isDarkTheme, setDarkTheme] = useState(localStorage.getItem("isDarkTheme") === "true");
