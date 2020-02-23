@@ -123,6 +123,7 @@ const NavBar = (props) => {
                 <MenuListContainer>
                     <UnorderedItem onClick={props.NavBarClickHandler}>
                         <Link to="/" style={{textDecoration: "none"}}><MenuListItem>Home</MenuListItem></Link>
+                        <Link to="/about" style={{textDecoration: "none"}}><MenuListItem>About</MenuListItem></Link>
                         <Link to="/blogs" style={{textDecoration: "none"}}><MenuListItem>Blogs</MenuListItem></Link>
                         <Link to="/skills" style={{textDecoration: "none"}}><MenuListItem>Skills</MenuListItem></Link>
                         <Link to="/projects" style={{textDecoration: "none"}}><MenuListItem>Projects</MenuListItem></Link>

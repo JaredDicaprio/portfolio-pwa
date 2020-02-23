@@ -9,6 +9,10 @@ const Home = lazy(() =>
   import("./Containers/LandingPage/index")
 );
 
+const About = lazy(() =>
+  import("./Containers/AboutPage/index")
+);
+
 const Blogs = lazy(() =>
   import("./Containers/BlogPage/index")
 );
@@ -25,6 +29,12 @@ const Projects = lazy(() =>
 const HomePage = () => (
   <Suspense fallback={<Spinner />}>
     <Home />
+  </Suspense>
+)
+
+const AboutPage = () => (
+  <Suspense fallback={<Spinner />}>
+    <About />
   </Suspense>
 )
 
@@ -50,12 +60,20 @@ const ProjectsPage = () => (
 const App = () => {
     const LightTheme = {
         bg: "#ffffff",
-        fontColor: "#464646"
+        fontColor: "#464646",
+        accentColor: "#0bceaf",
+        projectColor: "#ffffff",
+        projectShadow: "#00000015",
+        projectShadowHover: "#b8b8d9"
     }
     
     const DarkTheme = {
         bg: "#100e17",
-        fontColor: "#ffffff"
+        fontColor: "#ffffff",
+        accentColor: "#0bceaf",
+        projectColor: "#202026",
+        projectShadow: "#000010",
+        projectShadowHover: "#000001"
     }
     const [isDarkTheme, setDarkTheme] = useState(localStorage.getItem("isDarkTheme") === "true");
     const ThemeHandler = useCallback((event) => {
@@ -76,6 +94,7 @@ const App = () => {
           <NavBar {...{ isDarkTheme, ThemeHandler}} />
           <Router>
             <HomePage path="/" />
+            <AboutPage path="/about" />
             <BlogsPage path="/blogs" />
             <SkillsPage path="/skills" />
             <ProjectsPage path="projects" />
