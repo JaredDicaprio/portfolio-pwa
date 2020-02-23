@@ -8,18 +8,18 @@ const SocialList = styled.ul`
     font-size: 14px;
     & > li {
         margin: 10px 0;
-        &:hover {
+        /* &:hover {
             color: #4edac4;
-        };
+        }; */
         & > i {
             margin: 0 10px 0 0;
         };
         & > a {
             text-decoration: none;
             color: ${props => props.theme.fontColor};
-            &:hover {
+            /* &:hover {
                 color: #4edac4;
-            };
+            }; */
         };
         & > p {
             display: inline;

@@ -26,10 +26,18 @@ const Container = styled.div`
     & > h3 > a {
         cursor: pointer;
         margin-left: 10px;
-        color: ${props => props.theme.accentColor}
+        color: ${props => props.theme.accentColor};
+        & > i {
+            transform: scale(1);
+            transition: all 0.3s ease-in;
+            &:hover {
+                transform: scale(1.3);
+            };
+        };
     }
     @media (max-width: 768px) {
         width: 100%;
+        box-shadow: 0 10px 50px 0 ${props => props.theme.projectShadowHover};
     }
 `;
 

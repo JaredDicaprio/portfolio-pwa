@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import BlogPage from "../../components/BlogPage/index";
+import Spinner from "../Spinner/index";
 
 const BlogPageContainer = () => {
     const [postData, setPostData] = useState([]);
@@ -23,13 +24,19 @@ const BlogPageContainer = () => {
     };
 
     return (
-        <BlogPage
-            postData={postData}
-            activePost={activePost}
-            loading={loading}
-            postClickHandler={postClickHandler}
-        />
-    )
-}
+        <>
+            {postData[0] ? (
+                <BlogPage
+                    postData={postData}
+                    activePost={activePost}
+                    loading={loading}
+                    postClickHandler={postClickHandler}
+                />
+            ) : (
+                <Spinner />
+            )}
+        </>
+    );
+};
 
 export default BlogPageContainer;

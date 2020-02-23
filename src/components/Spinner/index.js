@@ -54,7 +54,7 @@ const Spinner = ({ size, color, loading, sizeUnit }) => {
 
 const Container = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
