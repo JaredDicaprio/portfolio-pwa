@@ -9,7 +9,7 @@ const Projects = (props) => {
             <div>
                 {props.data.map((data, index) => (
                     <ProjectWrapper key={index}>
-                        <h3>{data.name}</h3>
+                        <h3>{data.name} <a href={data.link} target="_blank" rel="noopener noreferrer"><i className="fas fa-link" alt="project link"></i></a></h3>
                         <h5>{data.date}</h5>
                         <p>{data.description}</p>
                     </ProjectWrapper>

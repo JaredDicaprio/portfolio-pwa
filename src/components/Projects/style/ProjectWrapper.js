@@ -23,6 +23,11 @@ const Container = styled.div`
         line-height: 23px;
         opacity: 0.9;
     };
+    & > h3 > a {
+        cursor: pointer;
+        margin-left: 10px;
+        color: ${props => props.theme.accentColor}
+    }
     @media (max-width: 768px) {
         width: 100%;
     }
