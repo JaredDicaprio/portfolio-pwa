@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 const Container = styled.div`
     width: 100vw;
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -19,7 +19,6 @@ const Heading = styled.h1`
 const SkillsDiv = styled.div`
     width: 90vw;
     height: 60vh;
-    /* background: #235bc1; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -65,7 +64,10 @@ const Text = styled.p`
 `;
 
 const Progress = styled.progress`
-    background: #100e17;
+    border: none;
+    background-color: grey;
+    &::-webkit-progress-value { background-color: ${props => props.theme.accentColor} }
+    &::-moz-progress-bar { background-color: ${props => props.theme.accentColor} }
     width: 100%;
     height: 5px;
 `;

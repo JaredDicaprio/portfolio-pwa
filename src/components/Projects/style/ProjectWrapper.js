@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
 const Container = styled.div`
-    width: 28%;
-    margin: 20px 50px;
+    width: 27%;
+    margin: 20px 40px;
     background: ${props => props.theme.projectColor};
     box-shadow: 0 0 10px 0 ${props => props.theme.projectShadow};
     transition: box-shadow 500ms;
@@ -24,7 +24,7 @@ const Container = styled.div`
         opacity: 0.9;
     };
     @media (max-width: 768px) {
-        width: 80%;
+        width: 100%;
     }
 `;
 

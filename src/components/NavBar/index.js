@@ -28,6 +28,9 @@ const HeaderList = styled.div`
     width: 40vw;
     height: 10vh;
     left: 50vw;
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 const ListItem = styled.li`
     list-style: none;
@@ -39,9 +42,6 @@ const ListItem = styled.li`
     &:hover {
         color: #4edac4;
     };
-    @media (max-width: 768px) {
-        display: none;
-    }
 `;
 const ThemeIcon = styled.div`
     display: flex;
@@ -113,7 +113,7 @@ const NavBar = (props) => {
             </MenuButtonDiv>
             <HeaderList>
                 <Link to="/" style={{textDecoration: "none"}}><ListItem>Home</ListItem></Link>
-                <Link to="/blogs" style={{textDecoration: "none"}}><ListItem>Blogs</ListItem></Link>
+                <Link to="/about" style={{textDecoration: "none"}}><ListItem>About</ListItem></Link>
                 <Link to="/projects" style={{textDecoration: "none"}}><ListItem>Projects</ListItem></Link>
             </HeaderList>
             <ThemeIcon onClick={props.ThemeHandler}>
@@ -125,15 +125,9 @@ const NavBar = (props) => {
                         <Link to="/" style={{textDecoration: "none"}}><MenuListItem>Home</MenuListItem></Link>
                         <Link to="/about" style={{textDecoration: "none"}}><MenuListItem>About</MenuListItem></Link>
                         <Link to="/blogs" style={{textDecoration: "none"}}><MenuListItem>Blogs</MenuListItem></Link>
-                        <Link to="/skills" style={{textDecoration: "none"}}><MenuListItem>Skills</MenuListItem></Link>
                         <Link to="/projects" style={{textDecoration: "none"}}><MenuListItem>Projects</MenuListItem></Link>
+                        <Link to="/skills" style={{textDecoration: "none"}}><MenuListItem>Skills</MenuListItem></Link>
                     </UnorderedItem>
-                        <a 
-                            href="https://drive.google.com/file/d/1YRckH5hyiHMNkMJu05Pk79RC7jVtvCHV/view?usp=sharing" 
-                            target="blank" 
-                            style={{textDecoration: "none"}} >
-                                <MenuListItem >Resume &#8595;</MenuListItem>
-                            </a>
                 </MenuListContainer>
             ) : null}
             

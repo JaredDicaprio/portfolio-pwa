@@ -8,10 +8,13 @@ const Container = styled.div`
     background: ${props => props.theme.bg};
     color: ${props => props.theme.fontColor};
     & > div {
-        width: 100%;
+        width: 80%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        @media (max-width: 768px) {
+            width: 100%;
+        }
     };
     & > h2 {
         text-align: center;

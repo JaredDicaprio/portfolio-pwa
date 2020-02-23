@@ -18,7 +18,8 @@ const ImageContainer = styled.div`
             border-radius: 50%;
             float: none;
             @media (max-width: 670px) {
-                width: 200px;
+                width: 190px;
+                border: 15px solid ${props => props.theme.bg === "#ffffff" ? "#c4d7fe" : "#4edac4"};
             };
         };
 
