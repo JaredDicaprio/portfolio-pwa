@@ -54,6 +54,7 @@ const Home = () => {
                             </a>
                         </li>
                     </SocialList>
+                    <p>Google <a href="https://www.google.com/search?q=UddeshJain" target="_blank" rel="noopener noreferrer" >UddeshJain</a> 😎 </p>
                 </div>
             </TextContainer>
             <ImageContainer>

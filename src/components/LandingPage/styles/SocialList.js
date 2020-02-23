@@ -8,9 +8,12 @@ const SocialList = styled.ul`
     text-decoration: none;
     & > li {
         display: inline;
-        margin: 15px;
+        margin: 0 30px 0 0;
+        &:last-child {
+            margin: 0;
+        };
         & > a {
-            font-size: 16px;
+            font-size: 20px;
             text-decoration: none;
             color: ${props => props.theme.fontColor};
             &:hover {

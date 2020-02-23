@@ -113,7 +113,7 @@ const NavBar = (props) => {
             </MenuButtonDiv>
             <HeaderList>
                 <Link to="/" style={{textDecoration: "none"}}><ListItem>Home</ListItem></Link>
-                <Link to="/about" style={{textDecoration: "none"}}><ListItem>About</ListItem></Link>
+                <Link to="/blogs" style={{textDecoration: "none"}}><ListItem>Blogs</ListItem></Link>
                 <Link to="/projects" style={{textDecoration: "none"}}><ListItem>Projects</ListItem></Link>
             </HeaderList>
             <ThemeIcon onClick={props.ThemeHandler}>
