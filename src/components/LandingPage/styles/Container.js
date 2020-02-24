@@ -25,8 +25,9 @@ const Container = styled.div`
     @media (max-width: 670px) {
         flex-direction: column-reverse;
     }
-    @media (max-height: 750px) {
-        height: 750px;
+    @media (max-height: 800px) {
+        /* height: 100vh; */
+        height: 650px;
     }
 `;
 

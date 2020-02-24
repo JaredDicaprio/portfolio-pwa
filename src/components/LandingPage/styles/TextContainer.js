@@ -44,10 +44,6 @@ const TextContainer = styled.div`
         height: 55vh;
         align-items: center;
         text-align: center;
-        /* border: 2px solid black; */
-    }
-    @media (max-height: 750px) {
-        height: 70vh;
     }
 `;
 

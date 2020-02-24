@@ -4,7 +4,6 @@ import BlogWrapper from "./style/BlogWrapper";
 import blogFallbackImage from "../../assets/blogFallback.png";
 
 const Blogs = (props) => {
-    // console.log(props.postData[0])
     return (
         <Container>
             <h2>All Posts</h2>

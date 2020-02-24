@@ -17,16 +17,11 @@ const BlogWrapper = styled.div`
     };
     & > img {
         width: 100%;
-        min-height: 250px;
+        min-height: 180px;
         border-radius: 10px 10px 0 0;
-        @media (max-width: 768px) {
-            min-height: 300px;
-        }
     };
     & > div > h5 {
         color: ${props => props.theme.fontColor};
-        /* font-size: 14px; */
-        /* letter-spacing: 2px; */
         & > a {
             text-decoration: none;
             color: ${props => props.theme.accentColor}
@@ -45,8 +40,11 @@ const BlogWrapper = styled.div`
         color: ${props => props.theme.accentColor};
         text-decoration: none;
     }
-    @media (max-width: 768px) {
-        width: 100%;
+    @media (max-width: 1100px) {
+        width: 40%;
+    }
+    @media (max-width: 600px) {
+        width: 90%;
         box-shadow: 0 10px 50px 0 ${props => props.theme.projectShadowHover};
         text-align: center;
     }

@@ -28,7 +28,7 @@ const ImageContainer = styled.div`
         width: 100vw;
         height: 40vh;
     }
-    @media (max-height: 750px) {
+    @media (max-height: 650px) {
         height: 450px;
     }
 `;
