@@ -41,12 +41,13 @@ const TextContainer = styled.div`
     }
     @media (max-width: 670px) {
         width: 100vw;
-        height: 50vh;
+        height: 55vh;
         align-items: center;
         text-align: center;
+        /* border: 2px solid black; */
     }
-    @media (max-height: 670px) {
-        height: 60vh;
+    @media (max-height: 750px) {
+        height: 70vh;
     }
 `;
 

@@ -26,10 +26,10 @@ const ImageContainer = styled.div`
     }
     @media (max-width: 670px) {
         width: 100vw;
-        height: 45vh;
+        height: 40vh;
     }
-    @media (max-height: 670px) {
-        height: 600px;
+    @media (max-height: 750px) {
+        height: 450px;
     }
 `;
 
