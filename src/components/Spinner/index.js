@@ -89,7 +89,7 @@ const Player = styled.div`
 Spinner.defaultProps = {
     loading: true,
     size: 100,
-    color: "#235bc1",
+    color: "#0bceaf",
     sizeUnit: "px",
 };
 

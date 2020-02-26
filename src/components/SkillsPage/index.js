@@ -1,5 +1,16 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { keyframes } from '@emotion/core'
+
+const fadeInUp = keyframes`
+    0% {
+        opacity: 0;
+    };
+    100% {
+        opacity: 1;
+        transform: none;
+  };
+`
 
 const Container = styled.div`
     width: 100vw;
@@ -10,6 +21,7 @@ const Container = styled.div`
     margin: 0;
     background: ${props => props.theme.bg};
     color: ${props => props.theme.fontColor};
+    animation: ${fadeInUp} 0.8s ease;
 `;
 
 const Heading = styled.h1`

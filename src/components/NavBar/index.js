@@ -17,6 +17,9 @@ const MenuButton = styled.i`
     margin: 30px;
     cursor: pointer;
     color: ${props => props.isDarkTheme ? "#ffffff" : "#000000"};
+    &:hover {
+        color: ${props => props.theme.accentColor};
+    };
 `;
 
 const HeaderList = styled.div`
@@ -58,6 +61,9 @@ const ThemeIconI = styled.i`
     margin: 30px;
     cursor: pointer;
     color: ${props => props.isDarkTheme ? "#ffffff" : "#000000"};
+    &:hover {
+        color: ${props => props.theme.accentColor};
+    };
 `;
 
 const WidthAnimation = keyframes`
