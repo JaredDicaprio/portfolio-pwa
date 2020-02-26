@@ -58,6 +58,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: ${props => props.theme.bg};
 `;
 
 const Wrapper = styled.div`

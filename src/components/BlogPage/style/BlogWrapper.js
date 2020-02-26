@@ -1,27 +1,47 @@
 import styled from "@emotion/styled";
 
 const BlogWrapper = styled.div`
-    width: 27%;
+    width: 25%;
     margin: 20px 20px;
     padding: 0 0 15px 0;
     background: ${props => props.theme.projectColor};
-    box-shadow: 0 0 20px 0 ${props => props.theme.projectShadowHover};
+    box-shadow: 0 0 20px 0 ${props => props.theme.projectShadow};
     transition: box-shadow 500ms;
     word-wrap: break-word;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
     &:hover {
-        box-shadow: 0 10px 50px 0 ${props => props.theme.projectShadowHover};
+        box-shadow: 20px 20px 40px 20px ${props => props.theme.projectShadowHover};
     };
     & > div {
         padding: 0 15px 15px 15px;
+    }
+    & > span {
+        display: inline-block;
+        position: relative;
+        background: ${props => props.theme.projectColor};
+        border-top: 5px solid red;
+        width: 100.5%;
+        height: 20px;
+        top: -15px;
+        left: -1px;
+        transform: rotate(3deg);
     };
     & > img {
         width: 100%;
         min-height: 180px;
         border-radius: 10px 10px 0 0;
     };
+    & > div > h3 {
+        margin: 0;
+        padding: 0;
+    };
     & > div > h5 {
+        font-size: 12px;
+        font-weight: 500;
+        opacity: 0.8;
         color: ${props => props.theme.fontColor};
+        margin: 10px 0 0 0;
+        padding: 0;
         & > a {
             text-decoration: none;
             color: ${props => props.theme.accentColor}
@@ -44,9 +64,9 @@ const BlogWrapper = styled.div`
         width: 40%;
     }
     @media (max-width: 600px) {
-        width: 90%;
+        width: 85%;
         box-shadow: 0 10px 50px 0 ${props => props.theme.projectShadowHover};
-        text-align: center;
+        /* text-align: center; */
     }
 `;
 

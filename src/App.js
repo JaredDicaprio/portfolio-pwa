@@ -72,8 +72,8 @@ const App = () => {
         fontColor: "#ffffff",
         accentColor: "#0bceaf",
         projectColor: "#202026",
-        projectShadow: "#000010",
-        projectShadowHover: "#000001"
+        projectShadow: "#000",
+        projectShadowHover: "#000100"
     }
     const [isDarkTheme, setDarkTheme] = useState(localStorage.getItem("isDarkTheme") === "true");
     const ThemeHandler = useCallback((event) => {
