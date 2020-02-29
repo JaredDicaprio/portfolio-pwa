@@ -17,9 +17,6 @@ const MenuButton = styled.i`
     margin: 30px;
     cursor: pointer;
     color: ${props => props.isDarkTheme ? "#ffffff" : "#000000"};
-    &:hover {
-        color: ${props => props.theme.accentColor};
-    };
 `;
 
 const HeaderList = styled.div`
@@ -61,9 +58,6 @@ const ThemeIconI = styled.i`
     margin: 30px;
     cursor: pointer;
     color: ${props => props.isDarkTheme ? "#ffffff" : "#000000"};
-    &:hover {
-        color: ${props => props.theme.accentColor};
-    };
 `;
 
 const WidthAnimation = keyframes`
@@ -132,7 +126,6 @@ const NavBar = (props) => {
                         <Link to="/about" style={{textDecoration: "none"}}><MenuListItem>About</MenuListItem></Link>
                         <Link to="/blogs" style={{textDecoration: "none"}}><MenuListItem>Blogs</MenuListItem></Link>
                         <Link to="/projects" style={{textDecoration: "none"}}><MenuListItem>Projects</MenuListItem></Link>
-                        <Link to="/skills" style={{textDecoration: "none"}}><MenuListItem>Skills</MenuListItem></Link>
                     </UnorderedItem>
                 </MenuListContainer>
             ) : null}

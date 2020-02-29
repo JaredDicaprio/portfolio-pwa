@@ -17,10 +17,6 @@ const Blogs = lazy(() =>
   import("./Containers/BlogPage/index")
 );
 
-const Skills = lazy(() =>
-  import("./Containers/SkillsPage/index")
-);
-
 const Projects = lazy(() =>
   import("./Containers/ProjectsPage/index")
 );
@@ -41,12 +37,6 @@ const AboutPage = () => (
 const BlogsPage = () => (
   <Suspense fallback={<Spinner />}>
     <Blogs />
-  </Suspense>
-)
-
-const SkillsPage = () => (
-  <Suspense fallback={<Spinner />}>
-    <Skills />
   </Suspense>
 )
 
@@ -96,7 +86,6 @@ const App = () => {
             <HomePage path="/" />
             <AboutPage path="/about" />
             <BlogsPage path="/blogs" />
-            <SkillsPage path="/skills" />
             <ProjectsPage path="projects" />
           </Router>
         </div>
