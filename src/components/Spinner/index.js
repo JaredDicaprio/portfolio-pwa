@@ -54,10 +54,11 @@ const Spinner = ({ size, color, loading, sizeUnit }) => {
 
 const Container = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: ${props => props.theme.bg};
 `;
 
 const Wrapper = styled.div`
@@ -89,7 +90,7 @@ const Player = styled.div`
 Spinner.defaultProps = {
     loading: true,
     size: 100,
-    color: "#235bc1",
+    color: "#0bceaf",
     sizeUnit: "px",
 };
 

@@ -1,15 +1,27 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { keyframes } from '@emotion/core'
+
+const fadeInUp = keyframes`
+    0% {
+        opacity: 0;
+    };
+    100% {
+        opacity: 1;
+        transform: none;
+  };
+`
 
 const Container = styled.div`
     width: 100vw;
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 0;
     background: ${props => props.theme.bg};
     color: ${props => props.theme.fontColor};
+    animation: ${fadeInUp} 0.8s ease;
 `;
 
 const Heading = styled.h1`
@@ -17,9 +29,8 @@ const Heading = styled.h1`
 `;
 
 const SkillsDiv = styled.div`
-    width: 70vw;
+    width: 90vw;
     height: 60vh;
-    background: #235bc1;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -27,7 +38,8 @@ const SkillsDiv = styled.div`
         display: initial;
         overflow-y: auto;
         height: 100%;
-        width: 100vw;
+        width: 80vw;
+        padding: 50px 0;
     }
 `;
 
@@ -55,7 +67,7 @@ const SkillTextDiv = styled.div`
 const Text = styled.p`
     margin: 0;
     padding: 0;
-    color: #ffffff;
+    color: ${props => props.theme.fontColor};
     font-weight: 500;
     font-size: 20px;
     @media (max-width: 768px) {
@@ -64,6 +76,10 @@ const Text = styled.p`
 `;
 
 const Progress = styled.progress`
+    border: none;
+    background-color: grey;
+    &::-webkit-progress-value { background-color: ${props => props.theme.accentColor} }
+    &::-moz-progress-bar { background-color: ${props => props.theme.accentColor} }
     width: 100%;
     height: 5px;
 `;

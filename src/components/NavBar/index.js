@@ -17,6 +17,9 @@ const MenuButton = styled.i`
     margin: 30px;
     cursor: pointer;
     color: ${props => props.isDarkTheme ? "#ffffff" : "#000000"};
+    &:hover {
+        color: ${props => props.theme.accentColor};
+    };
 `;
 
 const HeaderList = styled.div`
@@ -28,6 +31,9 @@ const HeaderList = styled.div`
     width: 40vw;
     height: 10vh;
     left: 50vw;
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 const ListItem = styled.li`
     list-style: none;
@@ -37,11 +43,8 @@ const ListItem = styled.li`
     cursor: pointer;
     color: ${props => props.theme.fontColor};
     &:hover {
-        color: #235bc1;
+        color: #4edac4;
     };
-    @media (max-width: 768px) {
-        display: none;
-    }
 `;
 const ThemeIcon = styled.div`
     display: flex;
@@ -58,6 +61,9 @@ const ThemeIconI = styled.i`
     margin: 30px;
     cursor: pointer;
     color: ${props => props.isDarkTheme ? "#ffffff" : "#000000"};
+    &:hover {
+        color: ${props => props.theme.accentColor};
+    };
 `;
 
 const WidthAnimation = keyframes`
@@ -94,7 +100,7 @@ const MenuListItem = styled.li`
     color: white;
     list-style: none;
     &:hover {
-        color: #235bc1;
+        color: #4edac4;
     }
     @media (max-width: 400px) {
         padding: 20px;
@@ -123,16 +129,11 @@ const NavBar = (props) => {
                 <MenuListContainer>
                     <UnorderedItem onClick={props.NavBarClickHandler}>
                         <Link to="/" style={{textDecoration: "none"}}><MenuListItem>Home</MenuListItem></Link>
+                        <Link to="/about" style={{textDecoration: "none"}}><MenuListItem>About</MenuListItem></Link>
                         <Link to="/blogs" style={{textDecoration: "none"}}><MenuListItem>Blogs</MenuListItem></Link>
-                        <Link to="/skills" style={{textDecoration: "none"}}><MenuListItem>Skills</MenuListItem></Link>
                         <Link to="/projects" style={{textDecoration: "none"}}><MenuListItem>Projects</MenuListItem></Link>
+                        <Link to="/skills" style={{textDecoration: "none"}}><MenuListItem>Skills</MenuListItem></Link>
                     </UnorderedItem>
-                        <a 
-                            href="https://drive.google.com/file/d/1YRckH5hyiHMNkMJu05Pk79RC7jVtvCHV/view?usp=sharing" 
-                            target="blank" 
-                            style={{textDecoration: "none"}} >
-                                <MenuListItem >Resume &#8595;</MenuListItem>
-                            </a>
                 </MenuListContainer>
             ) : null}
             

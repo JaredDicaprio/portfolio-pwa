@@ -1,129 +1,67 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import Picture from "../../assets/profile.png"
+import React from "react";
+import Container from "./styles/Container";
+import TextContainer from "./styles/TextContainer";
+import ImageContainer from "./styles/ImageContainer";
+import HeroImage from "../../assets/profile.png"
+import GreetingDiv from "./styles/Greeting";
+import SocialList from "./styles/SocialList";
+import ContactList from "./styles/ContactList";
 
-const Container = styled.div`
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100vw;
-    height: 83vh;
-    padding-bottom: 60px;
-    background: ${props => props.theme.bg};
-    color: ${props => props.theme.fontColor};
-`
-
-const Intro = styled.div`
-    width: 80%;
-    padding-bottom: 20px;
-`;
-
-const Name = styled.h1`
-    font-size: 40px;
-    @media (max-width: 370px) {
-        font-size: 30px;
-        margin: 0;
-        padding: 0;
-    }
-`;
-
-const ProfileContainer = styled.div``;
-
-const ProfileCircle = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    border: 3px solid #235bc1;
-    border-radius: 50%;
-    width: 130px;
-    height: 130px;
-    margin: 0 auto;
-`;
-
-const ProfilePicture = styled.img`
-    border-radius: 50%;
-    width: 130px;
-    height: 130px;
-`;
-
-const JobTitleDiv = styled.div`
-    padding-top: 40px;
-    font-weight: normal;
-    @media (max-width: 370px) {
-        padding-top: 10px;
-    }
-`;
-
-const Text = styled.p`
-    font-size: 20px;
-    letter-spacing: 1px;
-    @media (max-width: 768px) {
-        font-size: 18px;
-    }
-    @media (max-width: 370px) {
-        font-size: 14px;
-    }
-`;
-
-const JobDescription = styled.div`
-    padding: 5px 50px;
-    line-height: 40px;
-    @media (max-width: 370px) {
-        padding: 0 10px;
-        line-height: 30px;
-    }
-`;
-
-const IconsDiv = styled.div`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 30%;
-    font-size: 25px;
-    margin: 10px;
-`;
-
-const Icon = styled.i`
-    width: 60px;
-    transform: scale(1);
-    transition: all 0.1s ease-in;
-    &:hover {
-        transform: scale(1.3);
-    }
-`;
-
-const Anchor = styled.a`
-    text-decoration: none;
-    color: ${props => props.theme.fontColor};
-`;
-
-const Home = (props) => {
+const Home = () => {
     return (
         <Container>
-            <Intro>
-                <Text>hey, I'm</Text>
-                <Name>Uddesh</Name>
-            </Intro>
-            <ProfileContainer>
-                <ProfileCircle>
-                    <ProfilePicture src={Picture} alt="picture" />
-                </ProfileCircle>
-                <JobTitleDiv>
-                    <Text><b>full stack developer</b></Text>
-                </JobTitleDiv>
-                <JobDescription>
-                    <Text>javascript lover | Full Stack Developer | ReactJS | NodeJS | Blogger</Text>
-                </JobDescription>
-            </ProfileContainer>
-            <IconsDiv>
-                <Anchor href="https://gitlab.com/UddeshJain" rel="noopener" target="_blank"><Icon className="fab fa-gitlab" alt="Gitlab" /></Anchor>
-                <Anchor href="https://github.com/UddeshJain" rel="noopener" target="_blank"><Icon className="fab fa-github" alt="Github" /></Anchor>
-                <Anchor href="https://dev.to/uddeshjain" rel="noopener" target="_blank"><Icon className="fab fa-dev" alt="Dev Community" /></Anchor>
-                <Anchor href="https://www.linkedin.com/in/uddeshjain/" rel="noopener" target="_blank"><Icon className="fab fa-linkedin" alt="Linkedin" /></Anchor>
-                <Anchor href="https://twitter.com/Uddesh_" rel="noopener" target="_blank"><Icon className="fab fa-twitter" alt="twitter" /></Anchor>
-            </IconsDiv>
-            <Anchor href="https://www.google.com/search?q=UddeshJain" rel="noopener" target="blank"><Text>google <b>UddeshJain</b></Text></Anchor>
+            <TextContainer>
+                <div>
+                    <GreetingDiv>
+                        <p>Hello I'm</p>
+                    </GreetingDiv>
+                    <h1>Uddesh Jain</h1>
+                    <h4>Full Stack Developer</h4>
+                    <ContactList>
+                        <li>
+                            <i className="fas fa-envelope"></i>
+                            <a href="mailto:">jainuddesh35@gmail.com</a>
+                        </li>
+                        <li>
+                        <i className="fas fa-map-marker-alt"></i>
+                        <p>Gwalior, MP, India</p>
+                        </li>
+                    </ContactList>
+                    <SocialList>
+                        <li>
+                            <a href="https://gitlab.com/UddeshJain" target="_blank" rel="noopener noreferrer">
+                                <i className="fab fa-gitlab" alt="Gitlab" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/UddeshJain" target="_blank" rel="noopener noreferrer">
+                                <i className="fab fa-github" alt="Github" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dev.to/uddeshjain" target="_blank" rel="noopener noreferrer">
+                                <i className="fab fa-dev" alt="Dev Community" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/uddeshjain/" target="_blank" rel="noopener noreferrer">
+                                <i className="fab fa-linkedin" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/users/8971995/uddesh-jain" target="_blank" rel="noopener noreferrer">
+                                <i className="fab fa-stack-overflow" alt="stackoverflow" />
+                            </a>
+                        </li>
+                    </SocialList>
+                    <p>Google <a href="https://www.google.com/search?q=UddeshJain" target="_blank" rel="noopener noreferrer" >UddeshJain</a> 😎 </p>
+                </div>
+            </TextContainer>
+            <ImageContainer>
+                <div>
+                    <img src={HeroImage} alt="Hero" />
+                </div>
+            </ImageContainer>
         </Container>
     )
 }

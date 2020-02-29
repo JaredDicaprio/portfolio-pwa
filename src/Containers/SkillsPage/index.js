@@ -1,5 +1,5 @@
 import React from "react";
-import Skills from "../../components/Skills/index";
+import Skills from "../../components/SkillsPage/index";
 
 const SkillsContainer = () => {
     const data = {
