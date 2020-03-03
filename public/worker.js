@@ -1,10 +1,8 @@
 //  Version :- 1.1
 
-var CACHE_NAME = 'uddesh-portfolio-pwa';
+var CACHE_NAME = 'uddesh.tech-portfolio-pwa';
 var urlsToCache = [
-  '/',
-  '/ghost.png',
-  '/manifest.json'
+  '/'
 ];
 
 // Install a service worker
@@ -39,7 +37,7 @@ self.addEventListener('fetch', event => {
 
 // Update a service worker
 self.addEventListener('activate', event => {
-  var cacheWhitelist = ['uddesh-portfolio-pwa'];
+  var cacheWhitelist = ['uddesh.tech-portfolio-pwa'];
   event.waitUntil(
     caches.keys()
     .then(cacheNames => {
