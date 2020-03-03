@@ -1,6 +1,10 @@
+//  Version :- 1.1
+
 var CACHE_NAME = 'uddesh-portfolio-pwa';
 var urlsToCache = [
-  '/'
+  '/',
+  '/ghost.png',
+  '/manifest.json'
 ];
 
 // Install a service worker
@@ -9,11 +13,12 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function(cache) {
-        console.log('Opened cache');
+        console.log('cached data......');
         return cache.addAll(urlsToCache);
       })
       .catch(err => console.error(err))
   );
+  self.skipWaiting();
 });
 
 // Cache and return requests
