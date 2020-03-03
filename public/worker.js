@@ -16,7 +16,6 @@ self.addEventListener('install', event => {
       })
       .catch(err => console.error(err))
   );
-  self.skipWaiting();
 });
 
 // Cache and return requests
