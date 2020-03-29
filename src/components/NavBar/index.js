@@ -51,7 +51,7 @@ const ThemeIcon = styled.div`
   text-align: center;
   justify-content: center;
   position: absolute;
-  left: 85vw;
+  right: 6vw;
   /* width: 10vw; */
   height: 10vh;
 `;
