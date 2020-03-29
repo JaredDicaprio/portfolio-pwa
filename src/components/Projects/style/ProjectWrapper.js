@@ -27,9 +27,9 @@ const Container = styled.div`
         cursor: pointer;
         margin-left: 10px;
         color: ${props => props.theme.accentColor};
-        & > i {
+        & > svg {
             transform: scale(1);
-            transition: all 0.3s ease-in;
+            transition: all 0.2s ease-in;
             &:hover {
                 transform: scale(1.3);
             };

@@ -15,16 +15,13 @@ const SocialList = styled.ul`
         & > a {
             font-size: 20px;
             text-decoration: none;
-            color: ${props => props.theme.fontColor};
-            &:hover {
-                color: #4edac4;
-            };
-            & > i {
-                font-size: 20px;
+            & > svg {
+                fill: #939396;
                 transform: scale(1);
                 transition: all 0.3s ease;
                 &:hover {
                     transform: scale(1.3);
+                    fill: #31c4ad;
                 };
             };
         };

@@ -7,9 +7,10 @@ const SocialList = styled.ul`
     padding: 0;
     font-size: 14px;
     & > li {
-        margin: 10px 0;
-        & > i {
-            margin: 0 10px 0 0;
+        margin: 10px 0 0 0;
+        & > svg {
+            margin: 10px 10px 0 0;
+            fill: #939396;
         };
         & > a {
             text-decoration: none;

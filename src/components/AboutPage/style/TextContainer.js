@@ -36,7 +36,7 @@ const TextContainer = styled.div`
             transition: background-color 0.5s ease;
         };
     };
-    & > div > a > i {
+    & > div > a > svg {
         margin: 0 10px;
     };
     @media (max-width: 670px) {
