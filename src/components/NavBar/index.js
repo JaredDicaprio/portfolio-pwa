@@ -52,7 +52,7 @@ const ThemeIcon = styled.div`
   justify-content: center;
   position: absolute;
   left: 85vw;
-  width: 10vw;
+  /* width: 10vw; */
   height: 10vh;
 `;
 
