@@ -191,9 +191,6 @@ const NavBar = props => {
             <Link to="/projects" style={{ textDecoration: "none" }}>
               <MenuListItem>Projects</MenuListItem>
             </Link>
-            <Link to="/skills" style={{ textDecoration: "none" }}>
-              <MenuListItem>Skills</MenuListItem>
-            </Link>
           </UnorderedItem>
         </MenuListContainer>
       ) : null}

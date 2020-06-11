@@ -2,7 +2,9 @@ import React from "react";
 import LandingPage from "../../components/LandingPage/index";
 
 const LandingPageContainer = () => {
-  return <LandingPage />;
-};
+    return (
+        <LandingPage />
+    )
+}
 
 export default LandingPageContainer;
